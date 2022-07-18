@@ -5,9 +5,9 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
 export default function RenderListOfWords(props) {
-  const cardItems = props.data.map((word) => (
+  const cardItems = props.data.map((word,index) => (
     <Grid item xs={6} md={4} xl={2} lg={2}>
-      <WordComponent word={word} />
+      <WordComponent key={index} word={word} />
     </Grid>
   ));
 
@@ -20,13 +20,13 @@ export default function RenderListOfWords(props) {
   );
 }
 function WordComponent(props) {
-  const { word } = props.word;
+  const { userWord } = props.word;
   return (
     <>
       <Card>
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            {word}
+            {userWord}
           </Typography>
         </CardContent>
       </Card>

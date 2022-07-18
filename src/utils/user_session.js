@@ -5,6 +5,7 @@ export default class AppSessionHelper {
     let localUserID = this.getUserIDFromLocal();
     if (localUserID === null) {
       this.saveUserIdToLocal();
+      return this.getUserIDFromLocal();
     } else {
       return localUserID;
     }
