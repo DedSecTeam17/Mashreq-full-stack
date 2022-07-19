@@ -1,17 +1,18 @@
-import {initializeApp} from "firebase/app";
-import { getDatabase } from "firebase/database"
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBK7bEaZpT3Ub0T1-vYPKJZp4NXhVS4vn4",
-    authDomain: "practiceapp-d1c04.firebaseapp.com",
-    databaseURL: "https://practiceapp-d1c04.firebaseio.com",
-    projectId: "practiceapp-d1c04",
-    storageBucket: "practiceapp-d1c04.appspot.com",
-    messagingSenderId: "1050652679035",
-    appId: "1:1050652679035:web:a7edc2c0bec8a6ded1fbde"
+  apiKey: "AIzaSyChw_aJrIfk9hHKoI_aQP87EW_un0jkQxo",
+  authDomain: "mashreqmobile-df76c.firebaseapp.com",
+  databaseURL: "https://mashreqmobile-df76c.firebaseio.com",
+  projectId: "mashreqmobile-df76c",
+  storageBucket: "mashreqmobile-df76c.appspot.com",
+  messagingSenderId: "866589085046",
+  appId: "1:866589085046:web:b75f1ac891aa93df28be57",
+  measurementId: "G-949X05CVNZ"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app)
-export {db}
+const db = getDatabase(app);
+export { db };
