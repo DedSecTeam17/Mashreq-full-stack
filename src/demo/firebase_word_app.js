@@ -13,17 +13,9 @@ export default function FirebaseMashreqWordsDemo() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    new WordsRemoteService().getAllUserWords((snapshot) => {
+    new WordsRemoteService().getAllWordsWithCount((snapshot) => {
       setData([]);
-      var temArr = [];
-      if (snapshot !== null) {
-        Object.values(snapshot).forEach((val) => {
-          console.log(val);
-          temArr.push({ ...val });
-        });
-        setData([...data, ...temArr]);
-      }
-
+      setData([...data, ...snapshot]);
       setIsLoading(false);
     });
   }, []);
@@ -31,7 +23,7 @@ export default function FirebaseMashreqWordsDemo() {
   return !isLoading ? (
     <div>
       <Container fixed style={{ margin: "5%" }}>
-        <RenderListOfWords data={data.reverse()} />
+        <RenderListOfWords data={data} />
 
         <FormComponent
           onAddWordClicked={(word) => {

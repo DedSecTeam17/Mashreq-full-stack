@@ -15,6 +15,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import SimpleMashreqWordsDemo from "./demo/basic_word_app";
 import FirebaseMashreqWordsDemo from "./demo/firebase_word_app";
 import FirebaseWithUserWordsMashreqWordsDemo from "./demo/firebase_word_app_with_client";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { purple } from "@mui/material/colors";
 
 import DeviceUUID from "device-uuid";
 import AppSessionHelper from "./utils/user_session";
@@ -26,17 +28,31 @@ export default function App() {
 
     console.log(new AppSessionHelper().buildUserID());
   }, []);
+  const theme = createTheme({
+    palette: {
+      primary: {
+        // Purple and green play nicely together.
+        main: "#ff5e00"
+      },
+      secondary: {
+        // This is green.A700 as hex.
+        main: "#11cb5f"
+      }
+    }
+  });
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="demo1" element={<SimpleMashreqWordsDemo />} />
-        <Route path="demo2" element={<FirebaseMashreqWordsDemo />} />
-        <Route
-          path="demo3"
-          element={<FirebaseWithUserWordsMashreqWordsDemo />}
-        />
-      </Routes>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route path="demo1" element={<SimpleMashreqWordsDemo />} />
+          <Route path="demo2" element={<FirebaseMashreqWordsDemo />} />
+          <Route
+            path="demo3"
+            element={<FirebaseWithUserWordsMashreqWordsDemo />}
+          />
+        </Routes>
+      </ThemeProvider>
     </div>
   );
 }
