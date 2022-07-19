@@ -17,7 +17,7 @@ export default function FormComponent(props) {
       >
         <Grid style={{ padding: "5%" }}>
           <Grid container spacing={2}>
-            <Grid xs={7} md={7} xl={7} lg={7} style={{ margin: "1%" }}>
+            <Grid xs={12} md={7} xl={7} lg={7} style={{ margin: "1%" }}>
               <TextField
                 style={{ width: "100%" }}
                 id="outlined-basic"
@@ -34,7 +34,7 @@ export default function FormComponent(props) {
               />
             </Grid>
 
-            <Grid xs={3} md={3} xl={3} lg={3} style={{ margin: "1%" }}>
+            <Grid xs={12} md={3} xl={3} lg={3} style={{ margin: "1%" }}>
               <Button
                 onClick={() => {
                   props.onAddWordClicked(word);
