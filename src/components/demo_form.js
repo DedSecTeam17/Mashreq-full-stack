@@ -14,7 +14,7 @@ export default function FormComponent(props) {
           <TextField
             style={{ width: "100%" }}
             id="outlined-basic"
-            label="Outlined"
+            label="word"
             value={word}
             variant="outlined"
             onChange={(e) => {
@@ -27,7 +27,7 @@ export default function FormComponent(props) {
           <Button
             onClick={() => {
               props.onAddWordClicked(word);
-              setWord("")
+              setWord("");
             }}
             style={{ width: "100%", height: "60px" }}
             variant="contained"
