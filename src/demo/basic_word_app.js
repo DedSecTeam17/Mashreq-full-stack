@@ -14,7 +14,7 @@ export default function SimpleMashreqWordsDemo() {
 
         <FormComponent
           onAddWordClicked={(word) => {
-            setData([...data, { word }]);
+            setData([...data, { userWord: word }]);
 
             console.log(data);
           }}
